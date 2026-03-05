@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose exec app php artisan migrate --force)",
+      "Bash(docker compose exec app php artisan route:list --columns=method,uri,name)",
+      "Bash(docker compose exec app php artisan view:clear)",
+      "Bash(docker compose exec app php artisan config:clear)",
+      "Bash(docker compose exec app php artisan db:seed)",
+      "Bash(docker compose exec app php artisan tinker --execute=\":*)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:8080/products)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:8080/register)",
+      "Bash(curl -s -o /dev/null -w \" %{http_code}\" http://localhost:8080/login)"
+    ]
+  }
+}
